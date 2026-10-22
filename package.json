@@ -1,0 +1,23 @@
+{
+  "name": "mcpservernodejs",
+  "version": "1.0.0",
+  "description": "Posts & Comments REST API with a companion MCP server exposing it as tools",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "api": "npm run dev -w apps/api",
+    "api:start": "npm run start -w apps/api",
+    "mcp": "npm run dev -w apps/mcp",
+    "mcp:start": "npm run start -w apps/mcp"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "express",
+    "mongodb"
+  ],
+  "license": "ISC"
+}
