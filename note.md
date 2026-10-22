@@ -1,14 +1,14 @@
 Model Context Protocol (MCP)
-📑 What You Will Learn
-🧠 The Problem with LLMs – Powerful AI models can’t access real-world data or apps.
-🔌 What is MCP & Why It’s Necessary – MCP connects AI to external systems safely.
-📖 Key Terminology – Agent, Host, Client, and Server explained simply.
-🛠️ Tools, Resources, Prompts – The three core capabilities of MCP.
-💬 Communication Structure (JSON-RPC) – How AI and servers exchange structured messages.
-🌐 Transport Layer (HTTP, SSE, Streamable HTTP) – How data flows between systems.
-🤖 AI Agent (Cursor Example) – How an agent chooses and uses tools automatically.
-💻 Writing an MCP Server in Node.js – Build your own MCP server step-by-step.
-🧪 Testing with MCP Inspector & Cursor – Debug and validate your server.
+- What You Will Learn
+- The Problem with LLMs – Powerful AI models can’t access real-world data or apps.
+- What is MCP & Why It’s Necessary – MCP connects AI to external systems safely.
+- Key Terminology – Agent, Host, Client, and Server explained simply.
+- Tools, Resources, Prompts – The three core capabilities of MCP.
+- Communication Structure (JSON-RPC) – How AI and servers exchange structured messages.
+- Transport Layer (HTTP, SSE, Streamable HTTP) – How data flows between systems.
+- AI Agent (Cursor Example) – How an agent chooses and uses tools automatically.
+- Writing an MCP Server in Node.js – Build your own MCP server step-by-step.
+- Testing with MCP Inspector & Cursor – Debug and validate your server.
 (One more bullet is cut off at the bottom of the frame, partially hidden behind the video controls. It appears to start with “Deploying...” and mention “MCP” and “server”, but it isn’t legible enough to transcribe reliably.)
 
 MCP -> Model Context Protocol that allows AI agents and LLM like ChatGPT to securely connect to application and execute actions.
