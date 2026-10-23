@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const postSchema = new mongoose.Schema({
+const newsSchema = new mongoose.Schema({
   title: { type: String, required: true },
   author: { type: String, required: true },
   category: { type: String, required: true },
@@ -8,4 +8,4 @@ const postSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-export default mongoose.model('Post', postSchema);
+export default mongoose.model('News', newsSchema);

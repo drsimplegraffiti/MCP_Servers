@@ -1,7 +1,7 @@
-import { registerPostTools } from './post.tools.js';
+import { registerNewsTools } from './news.tools.js';
 import { registerCommentTools } from './comment.tools.js';
 
 export function registerTools(server) {
-  registerPostTools(server);
+  registerNewsTools(server);
   registerCommentTools(server);
 }

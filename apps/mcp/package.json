@@ -1,7 +1,7 @@
 {
   "name": "@apps/mcp",
   "version": "1.0.0",
-  "description": "MCP server exposing the Posts & Comments API as tools, resources and prompts",
+  "description": "MCP server exposing the News & Comments API as tools, resources and prompts",
   "type": "module",
   "main": "src/server.js",
   "scripts": {

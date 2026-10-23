@@ -1,6 +1,6 @@
 export const VALID_CATEGORIES = ['tech', 'finance', 'lifestyle'];
 
-export function validatePostInput(args) {
+export function validateNewsInput(args) {
   if (!args.title || typeof args.title !== 'string') return 'title is required';
   if (args.title.trim().length < 5) return 'title must be at least 5 characters';
   if (!args.author || typeof args.author !== 'string') return 'author is required';

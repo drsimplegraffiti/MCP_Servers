@@ -4,22 +4,43 @@ import express from 'express';
 import cors from 'cors';
 import routes from './routes/index.js';
 import { notFound, errorHandler } from './middleware/errorHandler.js';
+import { logDataFlow } from './utils/logger.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export function createApp() {
-  const app = express();
+    const app = express();
 
-  app.use(cors());
-  app.use(express.json());
-  app.use(express.static(path.join(__dirname, '..', 'public')));
+    app.use(cors());
+    app.use(express.json());
+    app.use(express.static(path.join(__dirname, '..', 'public')));
 
-  app.get('/health', (req, res) => res.json({ status: 'ok' }));
+    app.get(
+        '/health',
+        (req, res) => res.json({ status: 'ok' }),
+    );
 
-  app.use(routes);
+    app.use((req, res, next) => {
+        const started = Date.now();
+        const payload = req.body && Object.keys(req.body).length > 0 ? req.body : undefined;
+        logDataFlow(
+            'api←mcp',
+            'request',
+            { method: req.method, path: req.originalUrl, payload },
+        );
+        res.on('finish', () => {
+            logDataFlow('api→mcp', 'response', {
+                status: res.statusCode,
+                durationMs: Date.now() - started,
+            });
+        });
+        next();
+    });
 
-  app.use(notFound);
-  app.use(errorHandler);
+    app.use(routes);
 
-  return app;
+    app.use(notFound);
+    app.use(errorHandler);
+
+    return app;
 }

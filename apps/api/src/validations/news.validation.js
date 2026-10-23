@@ -1,6 +1,6 @@
 export const VALID_CATEGORIES = ['tech', 'finance', 'lifestyle'];
 
-export function validatePost(body) {
+export function validateNews(body) {
   if (!body.title || typeof body.title !== 'string') return { ok: false, msg: 'title is required' };
   if (body.title.trim().length < 5) return { ok: false, msg: 'title must be at least 5 characters' };
   if (!body.author || typeof body.author !== 'string') return { ok: false, msg: 'author is required' };

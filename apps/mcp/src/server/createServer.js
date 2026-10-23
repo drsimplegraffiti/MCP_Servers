@@ -4,18 +4,18 @@ import { registerResources } from '../resources/index.js';
 import { registerPrompts } from '../prompts/index.js';
 
 export function createMcpServer() {
-  const server = new McpServer(
-    {
-      name: 'posts-api-mcp',
-      version: '1.0.0',
-      description: 'MCP server that exposes Posts & Comments API as tools',
-    },
-    { capabilities: { tools: {}, resources: {}, prompts: {} } }
-  );
+    const server = new McpServer(
+        {
+            name: 'NTA-news-MCP-Server',
+            version: '1.0.0',
+            description: 'NTA news in Nigeria',
+        },
+        { capabilities: { tools: {}, resources: {}, prompts: {} } }
+    );
 
-  registerTools(server);
-  registerResources(server);
-  registerPrompts(server);
+    registerTools(server);
+    registerResources(server);
+    registerPrompts(server);
 
-  return server;
+    return server;
 }

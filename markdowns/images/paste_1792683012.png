@@ -1,0 +1,28 @@
+    async toggleLoyalty(
+        userId: string,
+        createdByType: CreatedByType,
+        enabled: boolean,
+    ) {
+        const ownerId =
+            await this.workshopOwnerResolverService.resolveWorkshopOwnerId(
+                userId,
+                createdByType,
+            );
+
+        const result = await this.loyaltyRepo.update(
+            {
+                workshopOwnerId: ownerId,
+            },
+            {
+                globalToggle: enabled,
+
+            },
+        );
+
+        return {
+            loyaltyEnabled: enabled,
+            updated: result.affected ?? 0,
+        };
+    }
+
+}

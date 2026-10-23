@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import postRoutes from './post.routes.js';
+import newsRoutes from './news.routes.js';
 
 const router = Router();
 
-router.use('/posts', postRoutes);
+router.use('/news', newsRoutes);
 
 export default router;
